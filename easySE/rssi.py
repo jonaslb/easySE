@@ -210,7 +210,7 @@ def run(
     mprint(f"MPI-rank {rank} done.", printer=rank)
     comm.Barrier()
     mprint((
-        f"All done! Use `gfdir2gf {out_dir} myelec.tbtgf` to convert the parallel results"
+        f"All done! Use `easySE gfdir2gf {out_dir}` to convert the parallel results"
         " into the tbtgf needed for Siesta/tbtrans."
     ))
 
