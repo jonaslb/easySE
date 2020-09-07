@@ -2,7 +2,7 @@ import argparse
 from easySE import rssi, gfdir2gf
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog="{easySE,python3 -m mpi4py -m easySE}")
 
     subparsers = parser.add_subparsers(dest="subcmd")
 
@@ -14,7 +14,7 @@ def main():
 
     args = parser.parse_args()
     subcmd = args.subcmd
-    
+
     del args.subcmd
     args = vars(args)
     
@@ -23,4 +23,5 @@ def main():
     elif subcmd == "gfdir2gf":
         gfdir2gf.run(**args)
     else:
-        raise ValueError(f"Shouldn't happen: What is {subcmd}?")
+        print(f"You either passed no subcommand or passed an invalid one!")
+        parser.print_help()

@@ -24,7 +24,7 @@ Use example:
 
 Puts the self-energy data into a directory `rssi-out`. It is recommended that you use a separate directory for the output because many files are created.
 
-To run in parallel with MPI, you unfortunately need to do a bit of a workaround for now with ``mpirun python3 -m mpi4py `which easySE` [args]`` to wrap the script in the mpi4py error handler.
+To run in parallel with MPI, you should use the following syntax: ``mpirun python3 -m mpi4py -m easySE [args...]``. This ensures a proper abort across all processes in case an error occurs.
 
 The script puts the self-energies into a directory specified with `-out-dir`. To convert the results to a TBTGF-file, use `easySE gfdir2gf output_dir`. Unfortunately this last step cannot be run in parallel (and it is usually IO limited, not CPU limited).
 The GF-files are not compressed, so the size may increase dramatically.
