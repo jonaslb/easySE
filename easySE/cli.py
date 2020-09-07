@@ -14,7 +14,9 @@ def main():
 
     args = parser.parse_args()
     subcmd = args.subcmd
+    
     del args.subcmd
+    args = vars(args)
     
     if subcmd == "rssi":
         rssi.run(**args)
