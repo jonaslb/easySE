@@ -1,0 +1,10 @@
+__pycache__
+.eggs
+.pytest_cache
+dist
+build
+*.pyc
+*.so
+*.c
+__config__.py
+.vscode/
