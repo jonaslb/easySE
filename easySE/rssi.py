@@ -140,7 +140,7 @@ def run(
     mprint("Reading hamiltonians")
     He = si.get_sile(bulk_hs).read_hamiltonian()
     Hs = si.get_sile(surface_hs).read_hamiltonian()
-    
+
     if bulk_nsc is not None:
         He.set_nsc(bulk_nsc)
     if surf_nsc is not None:
@@ -218,8 +218,4 @@ def run(
 if __name__ == "__main__":
     args = get_argparser().parse_args()
     mprint(f"Parsed args: {args}")
-    run(**args)
-    
-    
-
-
+    run(**vars(args))
