@@ -1,5 +1,7 @@
 # easySE
 
+**Archived 2021**: No longer working on this. I was going to make a few additions and then have it merged into sisl, but it never happened. Now it's dead and may or may not work with latest sisl.
+
 The point is to be a CLI for making self-energies with sisl. 
 This should be easier to do than to write the "same" boiler-plate code over and over.
 It is MPI-parallelized.
